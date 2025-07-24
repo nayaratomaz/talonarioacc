@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Scissors, Plus, Star, Calendar, DollarSign } from "lucide-react";
+import { NewBarberModal } from "@/components/NewBarberModal";
 
 const Barbers = () => {
   const barbers = [
@@ -54,10 +55,12 @@ const Barbers = () => {
           <h1 className="text-3xl font-bold text-foreground">Barbeiros</h1>
           <p className="text-muted-foreground mt-1">Gerencie sua equipe de profissionais</p>
         </div>
-        <Button className="bg-primary hover:bg-primary-hover shadow-glow">
-          <Plus className="w-4 h-4 mr-2" />
-          Novo Barbeiro
-        </Button>
+        <NewBarberModal>
+          <Button className="bg-primary hover:bg-primary-hover shadow-glow">
+            <Plus className="w-4 h-4 mr-2" />
+            Novo Barbeiro
+          </Button>
+        </NewBarberModal>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

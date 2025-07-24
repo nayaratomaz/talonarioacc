@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Users, Plus, Search, Phone, Mail, Calendar, Star } from "lucide-react";
+import { NewClientModal } from "@/components/NewClientModal";
 
 const Clients = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -77,10 +78,12 @@ const Clients = () => {
           <h1 className="text-3xl font-bold text-foreground">Clientes</h1>
           <p className="text-muted-foreground mt-1">Gerencie sua base de clientes</p>
         </div>
-        <Button className="bg-primary hover:bg-primary-hover shadow-glow">
-          <Plus className="w-4 h-4 mr-2" />
-          Novo Cliente
-        </Button>
+        <NewClientModal>
+          <Button className="bg-primary hover:bg-primary-hover shadow-glow">
+            <Plus className="w-4 h-4 mr-2" />
+            Novo Cliente
+          </Button>
+        </NewClientModal>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">

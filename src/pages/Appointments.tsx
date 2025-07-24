@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Plus, Search, Filter } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { NewAppointmentModal } from "@/components/NewAppointmentModal";
 
 const Appointments = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
@@ -37,10 +38,12 @@ const Appointments = () => {
           <h1 className="text-3xl font-bold text-foreground">Agendamentos</h1>
           <p className="text-muted-foreground mt-1">Gerencie todos os agendamentos da barbearia</p>
         </div>
-        <Button className="bg-primary hover:bg-primary-hover shadow-glow">
-          <Plus className="w-4 h-4 mr-2" />
-          Novo Agendamento
-        </Button>
+        <NewAppointmentModal>
+          <Button className="bg-primary hover:bg-primary-hover shadow-glow">
+            <Plus className="w-4 h-4 mr-2" />
+            Novo Agendamento
+          </Button>
+        </NewAppointmentModal>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
